@@ -16,5 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('about', function() {
-	return view('pages.about');
+	$array = [1, 2, 3, 4, 5];
+
+	return view('pages.about')->with('numbers', $array);
 });
