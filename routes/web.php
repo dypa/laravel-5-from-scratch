@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('about', function() {
-	$array = [1, 2, 3, 4, 5];
+Route::get('about', 'PagesController@about');
 
-	return view('pages.about')->with('numbers', $array);
-});
+Route::get('/hello/{name}', 'PagesController@hello');
