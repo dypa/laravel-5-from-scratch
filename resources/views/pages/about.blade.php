@@ -1,10 +1,14 @@
-about page here
+@extends('layout')
 
-<br>
+@section('content')
+	about page here
 
-@unless (empty($numbers))
-	numbers: <br>
-@endunless
-@foreach ($numbers as $number)
-	<li>{{ $number }}</li>
-@endforeach
+	<br>
+
+	@unless (empty($numbers))
+		numbers: <br>
+	@endunless
+	@foreach ($numbers as $number)
+		<li>{{ $number }}</li>
+	@endforeach
+@endsection
