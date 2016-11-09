@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return redirect()->route('employer');
 });
 
-Route::get('about', 'PagesController@about');
+Route::get('employers', 'EmployersController@index')->name('employers');
 
-Route::get('/hello/{name}', 'PagesController@hello');
+Route::get('employer/{employer}', 'EmployersController@show')->name('employer');
