@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	return redirect()->route('employer');
+	return redirect()->route('employers');
 });
 
 Route::get('employers', 'EmployersController@index')->name('employers');
