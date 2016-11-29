@@ -12,5 +12,11 @@
 		</ul>
 		@endif
 
+		<form action="{{ route('notes_store', ['id'=> $employer->id]) }}" method="POST">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<textarea name="body"></textarea>
+			<button>Сохранить</button>
+		</form>
+
 	<a href="{{ route('employers') }}">back</a>
 @endsection

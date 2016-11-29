@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::get('employers', 'EmployersController@index')->name('employers');
 
 Route::get('employer/{employer}', 'EmployersController@show')->name('employer');
+
+Route::post('employer/{employer}/notes', 'NotesController@store')->name('notes_store');
