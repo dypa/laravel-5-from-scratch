@@ -12,4 +12,9 @@ class Note extends Model
     {
     	return $this->belongsTo(Employer::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -15,6 +15,8 @@ class EmployersController extends Controller
 
     public function show(Employer $employer)
     {
+        $employer->load('notes.user');
+
     	return view('employers.show')->with('employer', $employer);
     }
 }

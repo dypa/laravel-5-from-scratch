@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class NotesController extends Controller
 {
+    //сохранение 3 разными способами, 3мя!!!
     public function store(Request $request, Employer $employer)
     {
 //        $note = new Note();
@@ -19,5 +20,17 @@ class NotesController extends Controller
         $employer->addNote(new Note($request->all()));
 
         return back();
+    }
+
+    public function edit(Note $note)
+    {
+    	return view('notes.edit')->with('note', $note);
+    }
+
+    public function update(Request $request, Note $note)
+    {
+    	$note->update($request->all());
+
+    	return back();
     }
 }
