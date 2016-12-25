@@ -10,6 +10,11 @@ class NotesController extends Controller
     //сохранение 3 разными способами, 3мя!!!
     public function store(Request $request, Employer $employer)
     {
+        $this->validate($request,
+            ['body' => 'required|min:10'],
+            ['required' => 'Please fill in the :attribute', 'min' => 'The :attribute shoud be of atleast :min characters']
+        );
+
 //        $note = new Note();
 //        $note->body = $request->body;
 //
@@ -17,7 +22,7 @@ class NotesController extends Controller
 
 //        $employer->notes()->create($request->all());
 
-        $employer->addNote(new Note($request->all()));
+        $employer->addNote(new Note($request->all()), 1);
 
         return back();
     }
