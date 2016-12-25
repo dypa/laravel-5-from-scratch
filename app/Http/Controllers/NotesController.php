@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Employer;
 use App\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NotesController extends Controller
 {
@@ -22,7 +23,7 @@ class NotesController extends Controller
 
 //        $employer->notes()->create($request->all());
 
-        $employer->addNote(new Note($request->all()), 1);
+        $employer->addNote(new Note($request->all()), Auth::id());
 
         return back();
     }

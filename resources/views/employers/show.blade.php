@@ -7,7 +7,7 @@
 		@if ($employer->notes)
 		<ul class="list-group">
 			@foreach ($employer->notes as $note)
-				<li class="list-group-item">{{ $note->user->username }}: {{ $note->body }} <span class="pull-right">[<a href="{{ route("notes_edit", ['note' => $note->id]) }}">edit</a>]</span></li>
+				<li class="list-group-item">{{ $note->user->name }}: {{ $note->body }} <span class="pull-right">[<a href="{{ route("notes_edit", ['note' => $note->id]) }}">edit</a>]</span></li>
 			@endforeach
 		</ul>
 		@endif
