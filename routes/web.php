@@ -28,4 +28,11 @@ Route::group(['middleware' => ['web']], function () {
     Auth::routes();
 
     Route::get('/home', 'HomeController@index');
+
+    Route::get('test', function () {
+        Session::flash('alert_class', 'info');
+        Session::flash('alert_message', 'test');
+
+        return redirect('/home');
+    });
 });
